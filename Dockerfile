@@ -5,7 +5,6 @@ RUN conda update -n base -c defaults conda
 RUN conda env create -f environment.yml
 ENTRYPOINT [ "/bin/bash", "-c" ]
 RUN conda init bash
-RUN echo "source activate app" > ~/.bashrc
 RUN echo "conda activate app" > ~/.bashrc
 ENV PATH /opt/conda/envs/app/bin:$PATH
 RUN conda list --explicit > env-spec-file.txt
